@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  - const airlines = ['name','version','price']
+  script.
+  - const results = [{ name: "emirtaes", seating: 500, price: "1300" },{ name: "southwest", seating: 300, price: "250" },{ name: "delta", seating: 400, price: "1100" }]
+  div(class='container-fluid')
+    div(class='row')
+      each result in results
+        div(class='col-sm-2')
+          p game_name: #{result.name}
+          p version: #{result.seating}
+          p price: #{result.price}

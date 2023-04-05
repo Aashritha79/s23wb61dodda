@@ -2,6 +2,15 @@ extends layout
 
 block content
   h1= title
-  p Aashritha Dodda #{title}
+  p I am sick today 
 
-  button(type="button", class="btn btn-secondary") Press Me
+  button(type="button", onclick='doReduce()' class="btn btn-secondary") Press Me
+  div(id="Reduce") Reduce the value
+  script.
+    var count = 20;
+    var change = -1;
+    function doReduce(){
+      count = count + change;
+      change = change-1;
+      document.getElementById("Reduce").innerHTML = "count " + count + " with change " + change;
+    }
