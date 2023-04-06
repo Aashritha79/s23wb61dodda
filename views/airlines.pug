@@ -4,11 +4,15 @@ block content
   h1= title
   - const airlines = ['name','version','price']
   script.
-  - const results = [{ name: "emirtaes", seating: 500, price: "1300" },{ name: "southwest", seating: 300, price: "250" },{ name: "delta", seating: 400, price: "1100" }]
+    function buy(index)
+        {
+            alert(`You played game ${index+1}`)
+        }
+  - const results = [{ name: "emirates", seating: 500, price: "1300" },{ name: "southwest", seating: 300, price: "250" },{ name: "delta", seating: 400, price: "1100" }]
   div(class='container-fluid')
     div(class='row')
-      each result in results
-        div(class='col-sm-2')
+      each result,index in results
+        div(class='col-sm-2' onclick =`buy(${index})`)
           p game_name: #{result.name}
           p version: #{result.seating}
           p price: #{result.price}
